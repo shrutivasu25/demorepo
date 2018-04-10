@@ -1,0 +1,59 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="InvokeTestSuite" parallel="none" thread-count="1">
+  <listeners>
+  	<listener class-name="com.invoke.base.TestListener"></listener>
+  </listeners>
+
+  <test name="SmokeTest - CH">
+  	<parameter name="browser"  value="chrome"/>
+    <groups>
+    	<run>
+			<include name="login"></include>
+			<include name="create"></include>
+    	</run>
+    </groups>
+    <classes>
+       <class name="com.invoke.testcases.LogInTest"/>
+       <class name="com.invoke.testcases.CreateSurveyTemplateTest"/>
+       <class name="com.invoke.testcases.EditSurveyTest"/>
+       <class name="com.invoke.testcases.CreateProjectTest"/>
+       <class name="com.invoke.testcases.CreateSessionTest"/>
+       <class name="com.invoke.testcases.EditProjectTest"/>
+       <class name="com.invoke.testcases.EditSessionTest"/>
+       <class name="com.invoke.testcases.EditSurveyTest"/>
+    </classes>
+  </test>
+
+<!-- 
+  <test name="LogInTest - FF" >
+  	<parameter name="browser"  value="firefox"/>
+  	<groups>
+  		<run>
+  			<exclude name="negative"></exclude>
+  			<exclude name="broken"></exclude>
+  		</run>
+  	</groups>
+    <classes>
+       <class name="com.invoke.testcases.LogInTest">
+       </class>
+    </classes>
+  </test>
+
+  <test name="LogInTest - Edge" >
+  	<parameter name="browser"  value="edge"/>
+  	<groups>
+  		<run>
+  			<exclude name="negative"></exclude>
+  			<exclude name="broken"></exclude>
+  		</run>
+  	</groups>
+    <classes>
+       <class name="com.invoke.testcases.LogInTest">
+       </class>
+    </classes>
+  </test>
+--> 
+
+</suite>
+

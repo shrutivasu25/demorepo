@@ -1,0 +1,35 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="InvokeTestSuite" parallel="tests" thread-count="2">
+  <listeners>
+  	<listener class-name="com.invoke.base.TestListener"></listener>
+  </listeners>
+
+  <test name="LogInTest - FF" >
+  	<parameter name="browser"  value="firefox"/>
+  	<groups>
+  		<run>
+  			<exclude name="broken"></exclude>
+  		</run>
+  	</groups>
+    <classes>
+       <class name="com.invoke.testcases.LogInTest">
+       </class>
+    </classes>
+  </test>
+  
+  <test name="LogInTest - CH" >
+  	<parameter name="browser"  value="chrome"/>
+  	<groups>
+  		<run>
+  			<exclude name="negative"></exclude>
+  			<exclude name="broken"></exclude>
+  		</run>
+  	</groups>
+    <classes>
+       <class name="com.invoke.testcases.LogInTest">
+       </class>
+    </classes>
+  </test>
+  
+</suite>

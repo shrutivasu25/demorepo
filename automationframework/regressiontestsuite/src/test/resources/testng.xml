@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="AutomationTestSuite" parallel="none" thread-count="1">
+  <listeners>
+  	<listener class-name="com.automation.base.TestListener"></listener>
+  </listeners>
+
+  <test name="RegressionTest - CH">
+  	<parameter name="browser"  value="chrome"/>
+    <groups>
+    	<run>
+			<include name="login"></include>
+    	</run>
+    </groups>
+    <classes>
+       <class name="com.automation.testcases.LogInTest"/>
+    </classes>
+  </test>
+</suite>
+
